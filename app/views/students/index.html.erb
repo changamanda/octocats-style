@@ -3,10 +3,21 @@
 
   <h1>Octocats!</h1>
 
-  <% @students.each do |student| %>
-    <h3><%= student.name %></h3>
-    <h5><%= student.tagline %></h5>
-    <%= image_tag(student.image_url, width: 300) %>
-    <br><br>
-  <% end %>
+  <ul id="works-grid" class="works-grid works-grid-gut works-grid-4 works-hover-w" style="position: relative; height: 531px;">
+    <% @students.each do |student| %>
+      <li class="work-item illustration webdesign" style="position: absolute; left: 0px; top: 0px;">
+        <a href="students/<%= student.id %>">
+          <div class="work-image">
+            <img src="<%= student.image_url %>" alt="">
+          </div>
+          <div class="work-caption font-alt">
+            <h3 class="work-title"><%= student.name %></h3>
+            <div class="work-descr">
+              Web-0415
+            </div>
+          </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
 </center>
