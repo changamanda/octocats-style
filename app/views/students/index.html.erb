@@ -1,0 +1,12 @@
+<center>
+  <p id="notice"><%= notice %></p>
+
+  <h1>Octocats!</h1>
+
+  <% @students.each do |student| %>
+    <h3><%= student.name %></h3>
+    <h5><%= student.tagline %></h5>
+    <%= image_tag(student.image_url, width: 300) %>
+    <br><br>
+  <% end %>
+</center>
