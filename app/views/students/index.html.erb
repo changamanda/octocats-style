@@ -1,12 +1,25 @@
 <center>
   <p id="notice"><%= notice %></p>
 
-  <h1>Octocats!</h1>
+  <ul id="filters" class="filter font-alt hidden-xs">
+    <li><a href="#" data-filter="*" class="wow fadeInUp animated current" style="visibility: visible;">All</a></li>
+    <% ('A'..'Z').to_a.each do |letter| %>
+        <li><a href="#" data-filter=".<%= letter.downcase %>" class="wow fadeInUp animated current" style="visibility: visible;">Starts with <%= letter %></a></li>
+    <% end %>
+  </ul>
 
-  <% @students.each do |student| %>
-    <h3><%= student.name %></h3>
-    <h5><%= student.tagline %></h5>
-    <%= image_tag(student.image_url, width: 300) %>
-    <br><br>
-  <% end %>
+  <ul id="works-grid" class="works-grid works-grid-gut works-grid-5 works-hover-w" style="position: relative; height: 286px;">
+    <% @students.each do |student| %>
+      <li class="work-item <%= student.name[0].downcase %>" style="position: absolute; left: 0px; top: 0px;">
+        <a href="students/<%= student.id %>">
+          <div class="work-image">
+            <%= image_tag(student.image_url) %>
+          </div>
+          <div class="work-caption font-alt">
+            <h3 class="work-title"><%= student.name %></h3>
+          </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
 </center>

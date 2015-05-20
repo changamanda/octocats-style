@@ -1,0 +1,26 @@
+.btn-default{
+  background-color: blue;
+}
+
+body{
+  background-image: url(<%= image_url("clouds.jpeg") %>);
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: center;
+}
+
+@font-face {
+  font-family: Quicksand;    
+  src: url(<%= asset_path('Quicksand-Regular.otf') %>);
+}
+
+@font-face {
+  font-family: Quicksand;    
+  src: url(<%= asset_path('Quicksand-Bold.otf') %>);
+  font-weight: bold;
+}
+
+.navbar{
+  font-family: Quicksand, serif;
+  font-weight: bold;
+}

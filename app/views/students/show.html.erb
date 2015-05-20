@@ -1,19 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
-
-<p>
-  <strong>Tagline:</strong>
-  <%= @student.tagline %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @student.image_url %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h2 class="module-title font-alt"><%= @student.name %></h2>
+    <div class="module-subtitle font-serif">
+      <%= @student.tagline %>
+    </div>
+    <center>
+      <%= image_tag(@student.image_url, width: "100%") %>
+    </center>
+  </div>
+</div>
